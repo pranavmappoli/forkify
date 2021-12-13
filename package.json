@@ -5,7 +5,10 @@
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html --dist-dir ./dist",
+    "predeploy": "parcel build ./*.html --public-url https://github.com/pranavmappoli/forkify",
+    "build-github": "parcel build index.html --public-url ./ -d docs",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Pranav M",
   "license": "ISC",
@@ -18,6 +21,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "fractional": "^1.0.0",
+    "gh-pages": "^3.2.3",
     "regenerator-runtime": "^0.13.7"
   }
 }
